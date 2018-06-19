@@ -1,5 +1,3 @@
-# ImageClassification
-
 # Image Classification: Graphic type T-shirts classifier
 ## The problem  
 This project aims at creating a model that identifies the 'graphic type' of t-shirts with the t-shirt image as an input and the graphic type of the t-shirt as the output.  
