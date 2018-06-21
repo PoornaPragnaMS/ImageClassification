@@ -72,7 +72,7 @@ Due to my model input, all images are resized into 264x198 pixels and stored to 
 ```
 Running code:
 ```sh
-$ python process_data.py
+python process_data.py
 ```
 The script will read image urls from the file `myntra_train_dataset.csv` , then download all images and save into folder `data/train/`, clean them. After downloaded all the images, the script will continue running to split images into folders `264x198` and `264x198-val`. 
 
