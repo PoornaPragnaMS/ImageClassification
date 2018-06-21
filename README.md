@@ -84,14 +84,14 @@ All three child models have already been trained and their best weights are save
 
 The ensemble model (the last model) is also build from three pre-trained models above and saved into file `ensemble_final.h5` (full model), due to large file, you can download from [here]() or run the following code to create your own:
 ```sh
-$ python ensemble_model.py
+python ensemble_model.py
 ```
 Due to lack of time, I only train each model with 30 epochs. So if you have time, you can train each model with 100 epochs for example, maybe you can push up the accuracy.
 
 #### Training new one
 If you do not wish to re-train the models feel free to skip this step and go straight into classifying the test set. Otherwise, you can training the model by running the command:
 ```sh
-$ python classifier.py
+ python classifier.py
 ```
 By default setting, the classifier will train all 3 child models with 10 epochs each model. So if you want to train more epochs, you will need to modify the script or run the script many times. After training done, the script will save the weights into files:`vgg16_weights.h5`, `resnet50_weights.h5`, `inceptionv3_weights.h5`.
 
@@ -99,7 +99,7 @@ By default setting, the classifier will train all 3 child models with 10 epochs 
 
 Run command:
 ```sh
-$ python ensemble_model.py
+ python ensemble_model.py
 ```
 The script will construct an stacked model by averaging the outputs from 3 child models above to make the final prediction. The stacked model will make prediction of the test set and save into files:
 * `ensemble_result.pkl`: a dictionary contains file names, label map, prediction labels.
@@ -109,14 +109,14 @@ The script will construct an stacked model by averaging the outputs from 3 child
 
 Run command:
 ```sh
-$ python submission.py
+python submission.py
 ```
 The script will read the file `ensemble_result.pkl` and fill the predicted class into the submission form.
 
 ### Convert into tensorflow format (.pb)
 Run command:
 ```sh
-$ python keras_to_tensorflow.py -input_model_file ensemble_final.h5
+ python keras_to_tensorflow.py -input_model_file ensemble_final.h5
 ```
 The script will convert model into tensorflow graph format file and save as name `ensemble_final.pb`.
 
